@@ -1,0 +1,60 @@
+### Grid - Definição ###
+
+grid-template: "<areas>" <rows> / <columns>*N = (<columns>, <columns>, <columns>)
+
+grid-template-areas: 
+"header header header"
+"aside main main"
+"footer footer footer"
+
+grid-template-rows: 1fr 100px 20% -> para 3 linhas de tamanhos diferentes;
+grid-template-rows: repeat(3, 1fr) -> 3 linhas de igual tamanho;
+
+grid-template-columns: 1fr 100px 20% ou repeat(3, 1fr);
+
+1fr = 1 fração do conteúdom, logo em 2fr 1fr o primeiro elemento terá 2/3 do tamanho disponível;
+
+Por conta da virtualidade, nós sempre teremos a quantidade de colunas + 1 para representar 
+as colunas virtuais e o mesmo comportamento se repete em relação às linhas;
+
+Logo se temos 3 rows em nosso grid e queremos que um elemento comece na primeira e vá até
+o final, temos de declarar da seguinte forma: grid-row: 1/4 (e não 1/3);
+
+grid-row = grid-row-start/grid-row-end (shorthand);
+
+grid-column = grid-column-start/grid-column-end;
+
+---
+
+### Grid - Alinhamento ###
+
+** Para trabalhar posicionamento do contéudo do Container **
+
+justify-content (start, end, center, space-around/bettween/evenly, etc)
+align-content (start, end, center)
+place-content (start, end, center)
+
+** Para trabalhar posicionamento dos itens dentro do conteúdo do Container **
+
+justify-items (start, end, center)
+aling-items (start, end, center)
+place-items (start, end, center)
+
+** Para trabalhar posicionamento de um item específico (nth-child()) **
+
+justify-self (start, end, center)
+align-self (start, end, center)
+place-self  (start, end, center)
+
+prefixo justify = eixo X -> horizontal
+prefixo align = eixo Y -> vertical
+prefixo place = trabalha ambos os eixos simultâneamente
+
+A não ser que a ordem (flex-direction ou grid-auto-flow, por exemplo) seja invertida, 
+passando de row para colums, o que inverte o eixo padrão do justify e do align (virando 
+align e justify, respectivamente);
+
+---
+
+
+
